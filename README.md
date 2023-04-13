@@ -23,3 +23,36 @@ This project is web application that likes to be CRM for codeacademy.
 * Homework
 * Payment
 * Attendance
+
+----------------
+
+## Permissions
+
+### Headmaster
+
+what can he do?
+
+* login | logout
+* manage course
+* manage group
+* manage teacher
+* manage student
+* manage payment
+
+### Teacher
+
+what can he do?
+
+* login | logout
+* manage homework
+* manage attendance
+* manage report
+
+### Student
+
+what can he do?
+
+* login | logout
+* view homework
+* view attendance
+* view report
