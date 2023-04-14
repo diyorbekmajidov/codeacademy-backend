@@ -1,3 +1,29 @@
 from django.contrib import admin
+from .models import (
+    City,
+    District,
+    Address,
+    Student,
+    StudentContact,
+    Course,
+    Group,
+    Assignment,
+    Task,
+    Lesson,
+    Submission,
+)
 
-# Register your models here.
+
+admin.site.register((
+    City,
+    District,
+    Address,
+    Student,
+    StudentContact,
+    Course,
+    Group,
+    Assignment,
+    Task,
+    Lesson,
+    Submission,
+))
