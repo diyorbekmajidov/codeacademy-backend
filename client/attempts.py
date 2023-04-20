@@ -1,0 +1,30 @@
+data = {'github': 'djumanov',
+ 'repo': 'djumanov/arithmetic_operators_homework',
+ 'tasks': [{'details': {'failed': 0, 'passed': 3, 'skipped': 0, 'total': 0},
+            'isSolved': True,
+            'name': 'arithmetic_op01',
+            'try': False},
+           {'details': {'failed': 4, 'passed': 0, 'skipped': 0, 'total': 0},
+            'isSolved': True,
+            'name': 'arithmetic_op02',
+            'try': False},
+           {'details': {'failed': 4, 'passed': 0, 'skipped': 0, 'total': 0},
+            'isSolved': False,
+            'name': 'arithmetic_op03',
+            'try': False},
+           {'details': {'failed': 6, 'passed': 0, 'skipped': 0, 'total': 0},
+            'isSolved': False,
+            'name': 'arithmetic_op04',
+            'try': True},
+           {'details': {'failed': 5, 'passed': 0, 'skipped': 0, 'total': 0},
+            'isSolved': False,
+            'name': 'arithmetic_op05',
+            'try': False},
+           {'details': {'failed': 4, 'passed': 0, 'skipped': 0, 'total': 0},
+            'isSolved': False,
+            'name': 'arithmetic_op06',
+            'try': True}]}
+
+import requests
+
+r = requests.post('http://127.0.0.1:8000/homework/attempt/', json=data)
