@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My apps
-    'api.apps.ApiConfig',
+    'ClassRoom.apps.ClassroomConfig',
+    'LessonPlanner.apps.LessonplannerConfig',
 
     # rest_framework
     'rest_framework',
