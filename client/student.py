@@ -25,7 +25,7 @@ def get_students(file_path: str) -> list:
     
 def add_students(data):
     data['status'] = 1
-    r = requests.post('http://codeschooluzapi.pythonanywhere.com/student/add/', json=data)
+    r = requests.post('http://127.0.0.1:8000/student/add/', json=data)
     print(r.status_code)
     # r = requests.post('https://codeschoolhomeworkapi.pythonanywhere.com/student/add-students/', json=data)
 
@@ -41,14 +41,14 @@ for file in ls:
 
 
 
-def add_new_group(group):
-    p = {'name': group, 'course': 1}
-    r = requests.post('http://codeschooluzapi.pythonanywhere.com/group/add/', json=p)
-    print(r.status_code)
-    # r = requests.post('https://codeschoolhomeworkapi.pythonanywhere.com/student/add-new-group/', json=p)
+# def add_new_group(group):
+#     p = {'name': group, 'course': 1}
+#     r = requests.post('http://127.0.0.1:8000//group/add/', json=p)
+#     print(r.status_code)
+#     # r = requests.post('https://codeschoolhomeworkapi.pythonanywhere.com/student/add-new-group/', json=p)
 
-for file in ls:
-    add_new_group(file.split('.')[0])
+# for file in ls:
+#     add_new_group(file.split('.')[0])
 # add_new_group('Python-2022P')
     
 # def add_students_to_group(group, data):

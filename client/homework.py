@@ -2,7 +2,7 @@ import csv
 import requests 
 from pprint import pprint
 
-url = 'http://codeschooluzapi.pythonanywhere.com/lesson/'
+url = 'http://127.0.0.1:8000/lesson/'
 
 
 def add_homeworks(homework):
@@ -44,5 +44,6 @@ def add_problems(problems: dict):
 tasks = get_tasks('client/homeworks/problems.csv')
 
 for task in tasks:
+    add_homeworks(task['homework'])
     for problem in task['problems']:
-        add_problems({'assignment': task['homework'], 'name': problem, 'level': 'easy'})
+        add_problems({'assignment': task['homework'], 'name': problem, 'level': 'easy', 'course': 'Python Foundation'})

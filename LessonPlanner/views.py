@@ -38,6 +38,8 @@ class TaskCreateView(APIView):
             if data.get('assignment') is None or data.get('level') is None or data.get('course') is None:
                 return Response(status=status.HTTP_400_BAD_REQUEST) # return error and status code
             course = Course.objects.get(name=data['course'])
+            print(course)
+            data['course'] = course.pk # set course to course object
             assignment = Assignment.objects.get(name=data['assignment'], course=course) # get assignment by id
             data['assignment'] = assignment.pk # set assignment to assignment object
             level = TaskLevel.objects.get(name=data['level']) # get level by id
