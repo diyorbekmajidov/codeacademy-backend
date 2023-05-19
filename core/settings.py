@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # My apps
+    # My apps ClassRoom, LessonPlanner, PayMents
     'ClassRoom.apps.ClassroomConfig',
     'LessonPlanner.apps.LessonplannerConfig',
+    'PayMents.apps.PaymentsConfig',
 
     # rest_framework
     'rest_framework',
