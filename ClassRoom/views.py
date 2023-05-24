@@ -229,3 +229,56 @@ class GetStudentsfromGroupView(APIView):
         except ObjectDoesNotExist:
             return Response({'status': 'group does not exist'}, status=status.HTTP_404_NOT_FOUND) # return error message   
 
+class CreateTypeTeacher(APIView):
+    def post(self, request: Request) -> Response:
+        '''create new type teacher'''
+        data = request.data # get data from request
+        serializer = TeacherTypeSerializer(data=data) # serialize data
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED) # return type teacher
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) # return error message
+    def get(self, request: Request) -> Response:
+        '''get all type teacher'''
+        type_teacher = TeacherType.objects.all()
+        serializer = TeacherTypeSerializer(type_teacher, many=True) # serialize type teacher
+        return Response(serializer.data) # return type teacher
+    def put (self, request: Request, pk: int) -> Response:
+        '''update type teacher by id'''
+        try:
+            type_teacher = TeacherType.objects.get(id=pk) # get type teacher by id
+            serializer = TeacherTypeSerializer(type_teacher, data=request.data) # serialize data
+            if serializer.is_valid():
+                serializer.save() # save type teacher
+                return Response(serializer.data, status=status.HTTP_202_ACCEPTED) # return type teacher
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) # return error message
+        except ObjectDoesNotExist:
+            return Response({'status': 'type teacher does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        
+
+class CreateTeacher(APIView):
+    def post(self, request: Request) -> Response:
+        '''create new teacher'''
+        data = request.data # get data from request
+        serializer = TeacherSerializer(data=data) # serialize data
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED) # return teacher
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) # return error message
+    def get(self, request: Request) -> Response:
+        '''get all teacher'''
+        teacher = Teacher.objects.all()
+        serializer = TeacherSerializer(teacher, many=True) # serialize teacher
+        return Response(serializer.data) # return teacher
+    def put (self, request: Request, pk: int) -> Response:
+        '''update teacher by id'''
+        try:
+            teacher = Teacher.objects.get(id=pk) # get teacher by id
+            serializer = TeacherSerializer(teacher, data=request.data) # serialize data
+            if serializer.is_valid():
+                serializer.save() # save teacher
+                return Response(serializer.data, status=status.HTTP_202_ACCEPTED) # return teacher
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) # return error message
+        except ObjectDoesNotExist:
+            return Response({'status': 'teacher does not exist'}, status=status.HTTP_404_NOT_FOUND)
+    
