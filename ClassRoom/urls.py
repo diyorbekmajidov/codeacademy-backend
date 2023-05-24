@@ -44,4 +44,6 @@ urlpatterns = [
     path('get-students-from-group/<int:pk>/', GetStudentsfromGroupView.as_view()), # get students from group
     path('create-type-teacher/', CreateTypeTeacher.as_view()), # create type teacher
     path('create-type-teacher/<int-pk>/', CreateTypeTeacher.as_view()), # Update type teacher
+    path('create-teacher/', CreateTeacher.as_view()), # create teacher
+    path('create-teacher/<int:pk>/', CreateTeacher.as_view()), # update teacher
 ]
