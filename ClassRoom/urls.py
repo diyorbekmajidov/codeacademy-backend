@@ -20,6 +20,7 @@ from .views import (
     CreateTypeTeacher , # create type teacher
     CreateTeacher,  # create teacher
     GetTeacherType, # get teacher type
+    GetTeacher, # get teacher
 
 )
 
@@ -45,8 +46,9 @@ urlpatterns = [
     path('remove-students-from-group/<int:pk>/', RemoveStudentsFromGroupView.as_view()), # remove student from group
     path('get-students-from-group/<int:pk>/', GetStudentsfromGroupView.as_view()), # get students from group
     path('create-type-teacher/', CreateTypeTeacher.as_view()), # create type teacher
-    path('create-type-teacher/<int-pk>/', CreateTypeTeacher.as_view()), # Update type teacher
+    path('create-type-teacher/<int:pk>/', CreateTypeTeacher.as_view()), # Update type teacher
     path('create-teacher/', CreateTeacher.as_view()), # create teacher
     path('create-teacher/<int:pk>/', CreateTeacher.as_view()), # update teacher
     path('get-teacher-type/<int:pk>/', GetTeacherType.as_view()), # get teacher type by id
+    path('get-teacher/<int:pk>/', GetTeacher.as_view()), # get teacher by id
 ]

@@ -291,3 +291,12 @@ class CreateTeacher(APIView):
         except ObjectDoesNotExist:
             return Response({'status': 'teacher does not exist'}, status=status.HTTP_404_NOT_FOUND)
     
+class GetTeacher(APIView):
+    def get(self, request: Request, pk: int) -> Response:
+        '''get teacher by id'''
+        try:
+            teacher = Teacher.objects.get(id=pk) # get teacher by id
+            serializer = TeacherSerializer(teacher) # serialize teacher
+            return Response(serializer.data) # return teacher
+        except ObjectDoesNotExist:
+            return Response({'status': 'teacher does not exist'}, status=status.HTTP_404_NOT_FOUND)
