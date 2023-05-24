@@ -17,6 +17,8 @@ from .views import (
     AddStudentsToGroupView, # add student to group
     RemoveStudentsFromGroupView, # remove student from group
     GetStudentsfromGroupView, # get students from group
+    CreateTypeTeacher , # create type teacher
+    CreateTeacher,  # create teacher
 )
 
 
@@ -40,4 +42,6 @@ urlpatterns = [
     path('add-students-to-group/<int:pk>/', AddStudentsToGroupView.as_view()), # add student to group
     path('remove-students-from-group/<int:pk>/', RemoveStudentsFromGroupView.as_view()), # remove student from group
     path('get-students-from-group/<int:pk>/', GetStudentsfromGroupView.as_view()), # get students from group
+    path('create-type-teacher/', CreateTypeTeacher.as_view()), # create type teacher
+    path('create-type-teacher/<int-pk>/', CreateTypeTeacher.as_view()), # Update type teacher
 ]
